@@ -1,5 +1,5 @@
 
-from flask import Blueprint, render_template, session, redirect
+from flask import Blueprint, render_template, session
 
 hello_bp = Blueprint("hello", __name__)
 
