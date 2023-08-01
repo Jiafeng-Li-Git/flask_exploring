@@ -1,12 +1,9 @@
 
-from flask import Blueprint, render_template
-
+from flask import Blueprint, render_template, session, redirect
 
 hello_bp = Blueprint("hello", __name__)
 
 
-@hello_bp.route("/hello/<user_name>")
-def hello(user_name):
-
-    # return f"Hello, {user_name}!"
-    return render_template("hello.html", name=user_name)
+@hello_bp.route("/hello")
+def hello():
+    return render_template("hello.html", name=session.get("username"))
