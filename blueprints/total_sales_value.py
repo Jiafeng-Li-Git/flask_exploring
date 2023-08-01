@@ -22,4 +22,5 @@ def total_sales_value(store_id):
         app.logger.error("Unvalidated request: " + str(request_err.messages))
         return request_err.messages, 400
 
-    return str(valid_req.store_id) + " on " + valid_req.date.strftime("%Y-%m-%d")
+    return WebRequestSchema().dump(valid_req)
+    # return str(valid_req.store_id) + " on " + valid_req.date.strftime("%Y-%m-%d")
