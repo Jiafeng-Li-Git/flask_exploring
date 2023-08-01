@@ -45,8 +45,6 @@ def create_app(configuration):
 
         if request.endpoint == "total_sales_value.total_sales_value":
             user_key = request.headers.get("X-Api-Key")
-            print(user_key)
-            print(request.headers)
             if not user_key or not is_valid_uuid(user_key):
                 app.logger.error("Empty or wrong format API key.")
                 abort(401)
