@@ -26,12 +26,12 @@ def create_app(configuration):
     def check_auth():
 
         if (
-            request.path == "/login"
-            or request.path == "/"
+            request.endpoint == "login.login"
+            or request.endpoint == "root.root"
         ):
             return None
 
-        if request.path == "/hello":
+        if request.endpoint == "hello.hello":
             if not session.get("username"):
                 return redirect("login")
             return None

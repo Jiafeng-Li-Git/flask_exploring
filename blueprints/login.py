@@ -21,7 +21,7 @@ def login_post():
 
 
 def valid_user(username, password):
-    if username == "jli" and password == "666":
+    if (username == "jli" and password == "666") or (username == "Jay" and password == "666"):
         return True
     else:
         return False
